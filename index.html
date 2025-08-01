@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A-Corp || Flight Instrument Simulator</title>
+  <link rel="icon" href="Acorp-Logo.png" type="image/x-icon">
+  <!-- Orbitron Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & jQuery -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.cdnfonts.com/css/digital-7" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+
+
+
+</head>
+
+<body>
+  <header class="bg-dark text-white text-center py-4 shadow">
+    <h1 class="display-5" style="font-family: 'Orbitron', sans-serif;">A-Corp Flight Instrument Dashboard</h1>
+  </header>
+
+  <section class="text-center my-4">
+    <button class="btn btn-success mx-2" onclick="startSimulation()">Start Simulation</button>
+  <button class="btn btn-danger mx-2" onclick="stopSimulation()">Stop Simulation</button>
+    <button class="btn btn-primary mx-2" onclick="downloadCSV()">Download CSV</button>
+    <button class="btn btn-warning mx-2" onclick="generateReport()">Generate Report</button>
+  </section>
+
+  <section id="instruments" class="container mb-5">
+    <div class="row row-cols-2 row-cols-md-3 g-4 text-center">
+      <div class="col">
+        <div class="p-3 border rounded bg-light">
+          <h5>Altitude</h5>
+          <h2 id="altitude">--</h2>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded bg-light">
+          <h5>Speed</h5>
+          <h2 id="speed">--</h2>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded bg-light ">
+          <h5>Heading</h5>
+          <h2 id="heading">--</h2>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded bg-light ">
+          <h5>Pitch</h5>
+          <h2 id="pitch">--</h2>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded bg-light ">
+          <h5>Roll</h5>
+          <h2 id="roll">--</h2>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3 border rounded bg-light">
+          <h5>Yaw</h5>
+          <h2 id="yaw">--</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="altitudeChart"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="airspeedChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Avionics Simulator Project by narteyhenry81@gmail.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
